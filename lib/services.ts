@@ -282,7 +282,7 @@ export const services: Service[] = [
     h1: "UTV, Can-Am and RZR Repair in Las Vegas",
     lead:
       "Southern Nevada is side by side country, and off-road vehicles take a beating. We repair the body damage on UTVs, Can-Ams, Polaris RZRs and other off-road machines.",
-    hero: img("technician-working-on-wheel-well", "Rebels Garage technician working on a wheel well during a repair"),
+    hero: img("utv-honda-talon-las-vegas", "Honda Talon UTV with custom lighting in Las Vegas"),
     sections: [
       {
         heading: "Off-road vehicles need a shop that knows them",
