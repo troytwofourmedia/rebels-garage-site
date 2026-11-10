@@ -132,7 +132,7 @@ export const services: Service[] = [
     gallery: [
       img("technician-checking-corvette-body-panel", "Technician checking the body panel on a Corvette at The Rebels Garage"),
       img("technician-repairing-front-bumper", "Technician repairing a front bumper in the Rebels Garage shop"),
-      img("body-panel-fit-check-corvette-z06", "Corvette Z06 body panel fit check during repair"),
+      img("classic-chevy-restoration-bodywork", "Bodywork on a classic Chevy at The Rebels Garage"),
     ],
     faqs: [
       {
