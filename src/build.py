@@ -28,7 +28,7 @@ LOGO, LOGO_SM = '/media/logo.webp', '/media/logo-sm.webp'
 # Which photo goes where. Every slot points at a file in media/ (name without .webp).
 # When the shop photos from Drive are added, change these names.
 PHOTO = {
-    'hero': 'corvette-black-shop',
+    'hero': 'storefront-dusk',
     'collision': 'lexus-front-damage', 'dent': 'panel-sanding', 'paint': 'liftgate-paint-stand', 'frame': 'trans-am-frame-rack',
     'offroad': 'utv-honda-talon', 'rv': 'silverado-on-lift', 'about': 'storefront-wide', 'about_side': 'team-duo',
     'band': 'shop-floor', 'services': 'shop-floor', 'gallery': 'corvette-rear', 'contact': 'storefront-wide', 'blog': 'painter-mixing',

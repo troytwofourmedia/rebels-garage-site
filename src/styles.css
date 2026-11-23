@@ -241,3 +241,5 @@ nav.main a[aria-current]{color:#fff;border-color:var(--red)}nav.main>a:hover,.dd
   .ctas{flex-direction:column}.ctas .btn,.faq-cta,section .wrap>div>.btn{width:100%;padding:17px}
 }
 .g-btns .btn{min-width:220px}
+
+@media (min-width:701px){.hero-bg img{filter:saturate(1.1) blur(2.5px);transform:scale(1.02);opacity:.34}}
