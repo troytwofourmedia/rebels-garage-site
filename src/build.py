@@ -29,7 +29,7 @@ LOGO, LOGO_SM = '/media/logo.webp', '/media/logo-sm.webp'
 # When the shop photos from Drive are added, change these names.
 PHOTO = {
     'hero': 'corvette-black-shop',
-    'collision': 'lexus-front-damage', 'dent': 'panel-sanding', 'paint': 'hood-paint-stand', 'frame': 'car-on-lift',
+    'collision': 'lexus-front-damage', 'dent': 'panel-sanding', 'paint': 'liftgate-paint-stand', 'frame': 'car-on-lift',
     'offroad': 'lifted-truck-rear', 'rv': 'silverado-on-lift', 'about': 'storefront-wide', 'about_side': 'team-duo',
     'band': 'shop-floor', 'services': 'shop-floor', 'gallery': 'corvette-rear', 'contact': 'storefront-wide', 'blog': 'painter-mixing',
     'notfound': 'corvette-black-shop', 'gallery_top': 'c8-shop-front',
@@ -47,8 +47,8 @@ GALLERY = [
     ('lexus-front-damage', 'Lexus front end', 'Collision teardown'),
     ('black-suv-before-after', 'Black SUV', 'Side damage, repaired'),
     ('door-panels-repair', 'Door panels', 'Panel repair and refinish'),
-    ('paint-booth-black', 'Paint booth', 'Black base coat and clear'),
-    ('hood-paint-stand', 'Hood refinish', 'Paint prep'),
+    ('liftgate-paint-stand', 'Liftgate refinish', 'Paint prep'),
+    ('truck-door-primer', 'Truck door', 'Primed and ready for paint'),
     ('truck-front-teardown', 'Truck front end', 'Frame and front end repair'),
     ('car-on-lift', 'Underbody work', 'Suspension and frame check'),
     ('silverado-on-lift', 'Chevy Tahoe', 'Front end collision repair'),
