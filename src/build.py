@@ -386,7 +386,7 @@ def pages(posts):
              'The Rebels Garage is a Las Vegas collision repair and auto body shop: dent removal, custom paint, frame straightening, and body repair for UTVs, RVs and box trucks. Free estimates.',
              f'''<section class="hero"><div class="hero-bg"><img src="{variant(PHOTO["hero"], 1920, 1100)}" alt="" width="1920" height="1100" fetchpriority="high"></div><div class="neon-glow" aria-hidden="true"></div>
 <div class="wrap hero-in"><img class="hero-logo" src="{LOGO}" alt="The Rebels Garage, Auto Collision Repair, Las Vegas NV" width="585" height="522">
-<div class="hero-copy"><p class="eyebrow">Las Vegas collision center</p><h1>Collision repair &amp; custom paint, <em>done right.</em></h1>
+<div class="hero-copy"><p class="eyebrow">The Rebels Garage</p><h1>Collision repair &amp; custom paint, <em>done right.</em></h1>
 <p class="lede">From dents to full collision repairs, we get your car, truck, UTV or RV looking and driving like new.</p>
 <div class="ctas"><a class="btn btn-red" href="/contact#quote">Get a Free Estimate</a><a class="btn btn-ghost" href="tel:{PHONE_T}">{ic("phone")}{PHONE}</a></div></div></div></section>
 {marquee()}
