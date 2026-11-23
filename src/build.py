@@ -34,7 +34,7 @@ PHOTO = {
     'band': 'shop-floor', 'services': 'shop-floor', 'gallery': 'corvette-rear', 'contact': 'storefront-wide', 'blog': 'painter-mixing',
     'notfound': 'corvette-black-shop', 'gallery_top': 'c8-shop-front',
 }
-FOCUS.update({'corvette-black-shop': (0.5, 0.6), 'lexus-front-damage': (0.6, 0.45), 'team-duo': (0.5, 0.3), 'owner-storefront': (0.5, 0.35), 'tech-panel-fit': (0.6, 0.3), 'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
+FOCUS.update({'storefront-door': (0.5, 0.35), 'corvette-black-shop': (0.5, 0.6), 'lexus-front-damage': (0.6, 0.45), 'team-duo': (0.5, 0.3), 'owner-storefront': (0.5, 0.35), 'tech-panel-fit': (0.6, 0.3), 'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
               'lifted-truck-rear': (0.5, 0.6), 'silverado-on-lift': (0.5, 0.4), 'team-inspection': (0.5, 0.4),
               'painter-mixing': (0.5, 0.35), 'storefront-wide': (0.5, 0.45), 'owner-storefront': (0.5, 0.55), 'front-counter': (0.5, 0.5)})
 
@@ -217,6 +217,23 @@ def cta_band(title='Wrecked, dented or ready for a new look?', lede='Send us a f
             f'<div class="ctas"><a class="btn btn-red" href="/contact#quote">Get a Free Estimate</a><a class="btn btn-ghost" href="tel:{PHONE_T}">{ic("phone")}{PHONE}</a></div></div></section>')
 
 
+def choice_sec():
+    return (f'''<section class="choice"><div class="wrap split choice-in"><div class="choice-photo"><img class="rounded" src="{variant('owner-storefront', 900, 1050)}" alt="Outside The Rebels Garage on S Decatur Blvd in Las Vegas" loading="lazy" width="900" height="1050"></div>
+<div><p class="eyebrow">Your car, your choice</p><h2>Do I have to use my insurance company's shop?</h2>
+<p class="lede">No. In Nevada, you can have your vehicle repaired at any licensed body shop you choose. Your insurance company can suggest one of its preferred shops, but state law says it cannot require you to use one, and it has to tell you about that right when you first report the claim.</p>
+{ticks(["Tell your insurance company you want your repair done at The Rebels Garage", "We inspect the damage and write up the repair estimate", "We work with your adjuster directly, from photos to paperwork", "If hidden damage shows up once the car is apart, we document it and send it to your insurer"])}
+<p class="fine">Nevada Revised Statutes 690B.016. Your insurer still pays based on the reasonable cost of the repair under your policy.</p>
+<div class="ctas"><a class="btn btn-red" href="/contact#quote">Start my estimate</a><a class="btn btn-ghost" href="tel:{PHONE_T}">{ic("phone")}{PHONE}</a></div></div></div></section>''')
+
+
+def insurance_band():
+    return (f'''<section class="ins-band"><div class="ins-bg" style="background-image:url({variant('storefront-door', 1920, 900)})"></div><div class="wrap ins-in">
+<p class="eyebrow">Insurance claims</p><h2>We work with all insurance companies.</h2>
+<p class="lede">Whoever your coverage is with, bring it to us. We handle the back and forth with your adjuster so you are not stuck in the middle, and we keep you updated until your vehicle is ready.</p>
+<div class="ins-points"><div><b>Any insurer</b><span>All carriers welcome</span></div><div><b>Your choice</b><span>Your car, your shop</span></div><div><b>Free estimates</b><span>With or without a claim</span></div></div>
+</div></section>''')
+
+
 def ba(before, after, label, w=1200, h=800):
     return (f'<figure class="ba" style="--pos:50%"><img src="{variant(after, w, h)}" alt="{esc(label)}, after" width="{w}" height="{h}" loading="lazy">'
             f'<div class="ba-before"><img src="{variant(before, w, h)}" alt="{esc(label)}, before" width="{w}" height="{h}" loading="lazy"></div>'
@@ -247,6 +264,8 @@ def steps():
 
 
 FAQ = [
+    ('Do I have to use the shop my insurance company recommends?', 'No. Nevada law lets you take your vehicle to any licensed body shop you choose, and your insurer cannot require you to use a particular shop. Just tell them you want the repair done at The Rebels Garage.'),
+    ('Do you work with my insurance company?', 'Yes. We work with all insurance companies and deal with your adjuster directly.'),
     ('Are estimates free?', 'Yes. Call the shop, stop by, or send your details through the estimate form and we will set up a free estimate.'),
     ('What kinds of vehicles do you repair?', 'Cars, trucks and SUVs, plus UTVs, Can-Ams, RZRs and other side-by-sides, RVs, motorhomes, travel trailers and commercial box trucks.'),
     ('Can you match my factory paint?', 'Yes. We match factory colors for panel and spot repairs, and we also do complete color changes and custom finishes.'),
@@ -382,6 +401,8 @@ def pages(posts):
 <div>{ic("spray")}<h3>Quality materials</h3><p>High quality parts and paint materials on every repair.</p></div>
 <div>{ic("check")}<h3>Satisfaction guaranteed</h3><p>We stand behind our work on every service.</p></div>
 <div>{ic("truck")}<h3>Big or small</h3><p>The room and know-how for side-by-sides, motorhomes and work trucks.</p></div></div></div></section>
+{choice_sec()}
+{insurance_band()}
 <section><div class="wrap">{sec_head("How it works", "From first call to keys in hand.")}{steps()}</div></section>
 {reviews()}
 {blog_sec}
