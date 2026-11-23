@@ -28,10 +28,37 @@ LOGO, LOGO_SM = '/media/logo.webp', '/media/logo-sm.webp'
 # Which photo goes where. Every slot points at a file in media/ (name without .webp).
 # When the shop photos from Drive are added, change these names.
 PHOTO = {
-    'hero': 'bmw-after',
-    'collision': 'bmw-after', 'dent': 'bmw-before', 'paint': 'bmw-after', 'frame': 'bmw-before',
-    'offroad': 'bmw-after', 'rv': 'bmw-before', 'about': 'bmw-after', 'band': 'bmw-after',
+    'hero': 'corvette-black-shop',
+    'collision': 'red-suv-front-damage', 'dent': 'panel-sanding', 'paint': 'hood-paint-stand', 'frame': 'car-on-lift',
+    'offroad': 'lifted-truck-rear', 'rv': 'silverado-on-lift', 'about': 'storefront-wide', 'about_side': 'team-inspection',
+    'band': 'shop-floor', 'services': 'shop-floor', 'gallery': 'corvette-rear', 'contact': 'storefront-wide', 'blog': 'painter-mixing',
+    'notfound': 'corvette-black-shop',
 }
+FOCUS.update({'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
+              'lifted-truck-rear': (0.5, 0.6), 'silverado-on-lift': (0.5, 0.4), 'team-inspection': (0.5, 0.4),
+              'painter-mixing': (0.5, 0.35), 'storefront-wide': (0.5, 0.45), 'owner-storefront': (0.5, 0.55), 'front-counter': (0.5, 0.5)})
+
+# Gallery grid: (master, title, caption)
+GALLERY = [
+    ('corvette-black-shop', 'C7 Corvette', 'Body and paint'),
+    ('red-suv-front-damage', 'Front end collision', 'Collision repair in progress'),
+    ('lexus-front-damage', 'Lexus front end', 'Collision teardown'),
+    ('black-suv-before-after', 'Black SUV', 'Side damage, repaired'),
+    ('door-panels-repair', 'Door panels', 'Panel repair and refinish'),
+    ('paint-booth-black', 'Paint booth', 'Black base coat and clear'),
+    ('hood-paint-stand', 'Hood refinish', 'Paint prep'),
+    ('roof-panel-primer', 'Roof panel', 'Primed and ready for paint'),
+    ('truck-front-teardown', 'Truck front end', 'Frame and front end repair'),
+    ('car-on-lift', 'Underbody work', 'Suspension and frame check'),
+    ('silverado-on-lift', 'Silverado', 'Truck body repair'),
+    ('lifted-truck-rear', 'Lifted truck', 'Rear end repair'),
+    ('motorcycle-fairing-repair', 'Motorcycle fairing', 'Fairing repair and paint'),
+    ('harley-custom', 'Harley custom', 'Custom finish'),
+    ('bmw-m3-green', 'BMW M3', 'Front end rebuild'),
+    ('corvette-rear', 'C8 Corvette', 'Body and paint'),
+    ('honda-fit-finished', 'Honda Fit', 'Finished and ready for pickup'),
+    ('painter-mixing', 'Color matching', 'Mixing paint in house'),
+]
 FOCUS['bmw-after'] = (0.45, 0.6)
 
 ICON = {
@@ -365,7 +392,7 @@ def pages(posts):
 
     P['services'] = ('Auto Body & Collision Services in Las Vegas | The Rebels Garage',
                      'Collision repair, dent removal, custom paint, frame straightening, UTV and side-by-side repair, and RV and box truck body repair in Las Vegas.',
-                     phero('Services', 'What we do', 'Auto body &amp; collision services.', 'Comprehensive body work and repairs for cars, trucks, UTVs, RVs and box trucks in Las Vegas.')
+                     phero('Services', 'What we do', 'Auto body &amp; collision services.', 'Comprehensive body work and repairs for cars, trucks, UTVs, RVs and box trucks in Las Vegas.', 'services')
                      + marquee() + f'<section><div class="wrap">{svc_cards()}</div></section>'
                      + f'<section class="alt"><div class="wrap">{sec_head("The process", "From first call to keys in hand.")}{steps()}</div></section>' + cta_band())
 
@@ -374,15 +401,15 @@ def pages(posts):
 
     P['gallery'] = ('Our Work | Before & After Auto Body Repair Las Vegas | The Rebels Garage',
                     'Before and after photos of collision repair, custom paint and body work from The Rebels Garage in Las Vegas.',
-                    phero('Our Work', 'Before &amp; after', 'Our work.', 'Real vehicles from our Las Vegas shop. Drag any slider to compare before and after.', ctas=False)
-                    + f'''<section><div class="wrap gal">
+                    phero('Our Work', 'Before &amp; after', 'Our work.', 'Real vehicles from our Las Vegas shop. Drag the slider to compare before and after.', 'gallery', ctas=False)
+                    + f'''<section><div class="wrap"><div class="gal">
 <figure class="gal-item gal-wide">{ba("bmw-before", "bmw-after", "BMW X6 color change")}<figcaption><b>BMW X6 complete color change</b><span>Custom paint &middot; Factory white to custom teal metallic</span></figcaption></figure>
-</div><p class="gal-more">More before and afters from the shop are on the way.</p></div></section>''' + cta_band())
+</div><div class="gal-grid">''' + ''.join(f'<figure><img src="{variant(m, 640, 800)}" alt="{esc(t)}: {esc(c)} at The Rebels Garage in Las Vegas" loading="lazy" width="640" height="800"><figcaption><b>{esc(t)}</b><span>{esc(c)}</span></figcaption></figure>' for m, t, c in GALLERY) + '''</div></div></section>''' + cta_band())
 
     P['about'] = ('About The Rebels Garage | Las Vegas Auto Body Shop',
                   'The Rebels Garage is a Las Vegas auto body and collision shop on S Decatur Blvd, repairing cars, trucks, UTVs, RVs and box trucks.',
                   phero('About', 'About the shop', 'Las Vegas built.<br>Rebel made.', 'A collision center on Decatur that treats every vehicle like it matters, because it does.', 'about', ctas=False)
-                  + f'''<section><div class="wrap split"><div><img class="rounded" src="{variant(PHOTO["about"], 900, 760)}" alt="Finished custom paint work at The Rebels Garage" loading="lazy" width="900" height="760"></div>
+                  + f'''<section><div class="wrap split"><div><img class="rounded" src="{variant(PHOTO["about_side"], 900, 760)}" alt="The Rebels Garage team looking over a repair in the shop" loading="lazy" width="900" height="760"></div>
 <div class="prose"><p class="eyebrow">Our story</p><h2>A reputation built panel by panel.</h2>
 <p>With years of experience in the automotive repair industry, The Rebels Garage has built a reputation for excellence in body work and collision repair.</p>
 <p>We repair the vehicles other shops turn away: side-by-sides after a hard day on the trails, motorhomes with a tangle of branch damage, box trucks that need to get back to work. And we give a daily driver with a door ding the same care.</p>
@@ -392,18 +419,22 @@ def pages(posts):
 <div><span>02</span><h3>Quality materials</h3><p>High quality parts and materials on every repair.</p></div>
 <div><span>03</span><h3>Satisfaction guaranteed</h3><p>We stand behind our work on all services.</p></div>
 <div><span>04</span><h3>Versatile expertise</h3><p>From cars to RVs and UTVs to box trucks, the same attention to detail.</p></div></div></div></section>
+<section><div class="wrap">{sec_head("Inside the shop", "Come see us on Decatur.", "A clean lobby, a real front counter and the crew that does the work.")}<div class="trio">
+<img class="rounded" src="{variant('lobby', 800, 600)}" alt="Customer lobby at The Rebels Garage" loading="lazy" width="800" height="600">
+<img class="rounded" src="{variant('front-counter', 800, 600)}" alt="Front counter at The Rebels Garage" loading="lazy" width="800" height="600">
+<img class="rounded" src="{variant('owner-storefront', 800, 600)}" alt="Outside The Rebels Garage on S Decatur Blvd" loading="lazy" width="800" height="600"></div></div></section>
 <section><div class="wrap split contact"><div><p class="eyebrow">Visit the shop</p><h2>Find us on Decatur.</h2>{visit_box()}</div>
 <div><iframe class="map" title="Map to {NAME}" loading="lazy" src="https://www.google.com/maps?q=2695+S+Decatur+Blvd+Suite+400,+Las+Vegas,+NV&amp;output=embed"></iframe></div></div></section>''' + cta_band())
 
     P['contact'] = ('Contact & Free Estimates | The Rebels Garage Las Vegas',
                     f'Get a free collision repair or paint estimate from The Rebels Garage in Las Vegas. Call {PHONE} or send your details online.',
-                    phero('Contact', 'Free estimates', 'Get your free estimate.', f'Send a few details about your vehicle and the damage, or call {PHONE}.', ctas=False)
+                    phero('Contact', 'Free estimates', 'Get your free estimate.', f'Send a few details about your vehicle and the damage, or call {PHONE}.', 'contact', ctas=False)
                     + f'''<section><div class="wrap split contact"><div id="quote"><h2>Request an estimate</h2>{quote_form()}</div>
 <div><h2>Visit the shop</h2>{visit_box()}<iframe class="map" title="Map to {NAME}" loading="lazy" src="https://www.google.com/maps?q=2695+S+Decatur+Blvd+Suite+400,+Las+Vegas,+NV&amp;output=embed"></iframe></div></div></section>''' + faq('alt'))
 
     P['blog'] = ('Auto Body & Collision Repair Blog | The Rebels Garage Las Vegas',
                  'Collision repair, paint and dent tips for Las Vegas drivers from The Rebels Garage.',
-                 phero('Blog', 'From the shop', 'Body shop tips &amp; news.', 'Straight answers about collision repair, paint, dents and keeping your vehicle looking right in the desert.', ctas=False)
+                 phero('Blog', 'From the shop', 'Body shop tips &amp; news.', 'Straight answers about collision repair, paint, dents and keeping your vehicle looking right in the desert.', 'blog', ctas=False)
                  + '<section><div class="wrap grid3">' + ''.join(post_card(p) for p in posts) + '</div></section>' + cta_band())
 
     P['404'] = ('Page not found | The Rebels Garage', 'This page could not be found.',

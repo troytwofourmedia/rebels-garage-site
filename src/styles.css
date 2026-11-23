@@ -206,3 +206,9 @@ nav.main a[aria-current]{color:#fff;border-color:var(--red)}nav.main>a:hover,.dd
   .mbar{transform:translateY(110%);transition:transform .3s}.mbar.show,body:not(.has-hero) .mbar{transform:none}
   .site-foot{padding-bottom:120px}
 }
+
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.gal-grid figure{margin:0}.gal-grid img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:14px;display:block}
+.gal-grid figcaption{display:flex;flex-direction:column;padding:12px 2px 0}.gal-grid figcaption span{color:var(--mute);font-size:.9rem}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.trio img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+@media(max-width:860px){.gal-grid{grid-template-columns:repeat(2,1fr);gap:12px}.gal-grid figcaption span{font-size:.8rem}.trio{grid-template-columns:1fr}}
