@@ -28,18 +28,20 @@ LOGO, LOGO_SM = '/media/logo.webp', '/media/logo-sm.webp'
 # Which photo goes where. Every slot points at a file in media/ (name without .webp).
 # When the shop photos from Drive are added, change these names.
 PHOTO = {
-    'hero': 'corvette-black-shop',
+    'hero': 'lexus-front-damage',
     'collision': 'red-suv-front-damage', 'dent': 'panel-sanding', 'paint': 'hood-paint-stand', 'frame': 'car-on-lift',
-    'offroad': 'lifted-truck-rear', 'rv': 'silverado-on-lift', 'about': 'storefront-wide', 'about_side': 'team-inspection',
+    'offroad': 'lifted-truck-rear', 'rv': 'silverado-on-lift', 'about': 'storefront-wide', 'about_side': 'team-duo',
     'band': 'shop-floor', 'services': 'shop-floor', 'gallery': 'corvette-rear', 'contact': 'storefront-wide', 'blog': 'painter-mixing',
-    'notfound': 'corvette-black-shop',
+    'notfound': 'corvette-black-shop', 'gallery_top': 'c8-shop-front',
 }
-FOCUS.update({'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
+FOCUS.update({'lexus-front-damage': (0.6, 0.45), 'team-duo': (0.5, 0.3), 'owner-storefront': (0.5, 0.35), 'tech-panel-fit': (0.6, 0.3), 'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
               'lifted-truck-rear': (0.5, 0.6), 'silverado-on-lift': (0.5, 0.4), 'team-inspection': (0.5, 0.4),
               'painter-mixing': (0.5, 0.35), 'storefront-wide': (0.5, 0.45), 'owner-storefront': (0.5, 0.55), 'front-counter': (0.5, 0.5)})
 
 # Gallery grid: (master, title, caption)
 GALLERY = [
+    ('c8-shop-front', 'C8 Corvette Z06', 'In the shop for body work'),
+    ('tech-panel-fit', 'Panel fit check', 'Checking gaps and alignment'),
     ('corvette-black-shop', 'C7 Corvette', 'Body and paint'),
     ('red-suv-front-damage', 'Front end collision', 'Collision repair in progress'),
     ('lexus-front-damage', 'Lexus front end', 'Collision teardown'),
@@ -47,7 +49,6 @@ GALLERY = [
     ('door-panels-repair', 'Door panels', 'Panel repair and refinish'),
     ('paint-booth-black', 'Paint booth', 'Black base coat and clear'),
     ('hood-paint-stand', 'Hood refinish', 'Paint prep'),
-    ('roof-panel-primer', 'Roof panel', 'Primed and ready for paint'),
     ('truck-front-teardown', 'Truck front end', 'Frame and front end repair'),
     ('car-on-lift', 'Underbody work', 'Suspension and frame check'),
     ('silverado-on-lift', 'Silverado', 'Truck body repair'),
@@ -55,7 +56,6 @@ GALLERY = [
     ('motorcycle-fairing-repair', 'Motorcycle fairing', 'Fairing repair and paint'),
     ('harley-custom', 'Harley custom', 'Custom finish'),
     ('bmw-m3-green', 'BMW M3', 'Front end rebuild'),
-    ('corvette-rear', 'C8 Corvette', 'Body and paint'),
     ('honda-fit-finished', 'Honda Fit', 'Finished and ready for pickup'),
     ('painter-mixing', 'Color matching', 'Mixing paint in house'),
 ]
@@ -409,7 +409,7 @@ def pages(posts):
     P['about'] = ('About The Rebels Garage | Las Vegas Auto Body Shop',
                   'The Rebels Garage is a Las Vegas auto body and collision shop on S Decatur Blvd, repairing cars, trucks, UTVs, RVs and box trucks.',
                   phero('About', 'About the shop', 'Las Vegas built.<br>Rebel made.', 'A collision center on Decatur that treats every vehicle like it matters, because it does.', 'about', ctas=False)
-                  + f'''<section><div class="wrap split"><div><img class="rounded" src="{variant(PHOTO["about_side"], 900, 760)}" alt="The Rebels Garage team looking over a repair in the shop" loading="lazy" width="900" height="760"></div>
+                  + f'''<section><div class="wrap split"><div><img class="rounded" src="{variant(PHOTO["about_side"], 900, 760)}" alt="Two of The Rebels Garage crew in the shop" loading="lazy" width="900" height="760"></div>
 <div class="prose"><p class="eyebrow">Our story</p><h2>A reputation built panel by panel.</h2>
 <p>With years of experience in the automotive repair industry, The Rebels Garage has built a reputation for excellence in body work and collision repair.</p>
 <p>We repair the vehicles other shops turn away: side-by-sides after a hard day on the trails, motorhomes with a tangle of branch damage, box trucks that need to get back to work. And we give a daily driver with a door ding the same care.</p>
