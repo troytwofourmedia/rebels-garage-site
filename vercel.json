@@ -6,9 +6,60 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {"source": "/home", "destination": "/", "permanent": true},
-    {"source": "/collision", "destination": "/collision-repair", "permanent": true},
-    {"source": "/paint", "destination": "/custom-paint", "permanent": true},
-    {"source": "/quote", "destination": "/contact#quote", "permanent": false}
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/collision",
+      "destination": "/collision-repair",
+      "permanent": true
+    },
+    {
+      "source": "/paint",
+      "destination": "/custom-paint",
+      "permanent": true
+    },
+    {
+      "source": "/quote",
+      "destination": "/contact#quote",
+      "permanent": false
+    },
+    {
+      "source": "/services/collision-repair-las-vegas",
+      "destination": "/collision-repair",
+      "permanent": true
+    },
+    {
+      "source": "/services/dent-removal-las-vegas",
+      "destination": "/dent-repair",
+      "permanent": true
+    },
+    {
+      "source": "/services/custom-paint-las-vegas",
+      "destination": "/custom-paint",
+      "permanent": true
+    },
+    {
+      "source": "/services/rv-box-truck-repair-las-vegas",
+      "destination": "/rv-box-truck-repair",
+      "permanent": true
+    },
+    {
+      "source": "/services/utv-can-am-rzr-repair-las-vegas",
+      "destination": "/utv-off-road-repair",
+      "permanent": true
+    },
+    {
+      "source": "/services/frame-straightening-las-vegas",
+      "destination": "/frame-straightening",
+      "permanent": true
+    },
+    {
+      "source": "/studio/:path*",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }
