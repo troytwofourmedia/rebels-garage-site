@@ -100,7 +100,7 @@ SERVICES = [
      ['A ding you notice every time you walk up to the car', 'Hail damage after a storm', 'A crease along a body line', 'Before trading in or selling your vehicle']),
     ('custom-paint', 'spray', 'paint', 'Custom Paint', 'Custom Paint &amp; Auto Painting in Las Vegas',
      'Factory color matching, full color changes and custom finishes.',
-     'Whether you need one panel matched to factory paint or a complete color change, our paint work is done with careful prep, precise color matching and a clean, even finish. See the BMW X6 we took from factory white to a custom teal metallic.',
+     'Whether you need one panel matched to factory paint or a complete color change, our paint work is done with careful prep, precise color matching and a clean, even finish. See the BMW X6 we took from factory white to a custom green metallic.',
      ['Factory color matching', 'Complete color changes', 'Custom and metallic finishes', 'Spot and panel refinishing', 'Clear coat repair', 'Bumper and trim painting'],
      ['Faded, peeling or oxidized paint', 'A mismatched panel from an old repair', 'You want a whole new look', 'Scratches through the clear coat']),
     ('frame-straightening', 'frame', 'frame', 'Frame Straightening', 'Frame Straightening in Las Vegas',
@@ -342,7 +342,7 @@ def service_page(i, s):
     slug, icn, slot, short, title, one, intro, incl, signs = s
     others = [x for x in SERVICES if x[0] != slug]
     other_links = ''.join(f'<a class="mini" href="/{x[0]}">{ic(x[1])}<span>{x[3]}</span>{ic("arrow", "chev")}</a>' for x in others)
-    paint_ba = (f'<section class="alt"><div class="wrap">{sec_head("Before &amp; after", "BMW X6: factory white to custom teal.", "Drag the slider to see the full color change.")}{ba("bmw-before", "bmw-after", "BMW X6 custom paint")}</div></section>') if slug == 'custom-paint' else ''
+    paint_ba = (f'<section class="alt"><div class="wrap">{sec_head("Before &amp; after", "BMW X6: factory white to custom green.", "Drag the slider to see the full color change.")}{ba("bmw-before", "bmw-after", "BMW X6 custom paint")}</div></section>') if slug == 'custom-paint' else ''
     body = (phero(f'<a href="/services">Services</a><span>/</span>{short}', f'0{i + 1} &middot; {short}', title, one, slot)
             + f'''<section><div class="wrap split"><div><p class="eyebrow">How we handle it</p><h2>{short} done right.</h2><p class="lede">{intro}</p>{ticks(incl)}
 <div class="ctas"><a class="btn btn-red" href="/contact#quote">Get a Free Estimate</a></div></div>
@@ -372,7 +372,7 @@ def pages(posts):
 <div class="ctas"><a class="btn btn-red" href="/contact#quote">Get a Free Estimate</a><a class="btn btn-ghost" href="tel:{PHONE_T}">{ic("phone")}{PHONE}</a></div></div></div></section>
 {marquee()}
 <section><div class="wrap">{sec_head("What we fix", "Six ways we bring vehicles back.", "Comprehensive body work and repairs for a wide range of vehicles, all under one roof on Decatur.", '<a class="link" href="/services">All services ' + ic("arrow") + '</a>')}{svc_cards()}</div></section>
-<section class="alt"><div class="wrap split ba-split"><div><p class="eyebrow">Custom paint</p><h2>Factory white to custom teal.</h2>
+<section class="alt"><div class="wrap split ba-split"><div><p class="eyebrow">Custom paint</p><h2>Factory white to custom green.</h2>
 <p class="lede">A complete color change on a BMW X6, with precise prep and a flawless metallic finish. Drag to compare.</p><a class="btn btn-line" href="/gallery">See more of our work</a></div>
 <div>{ba("bmw-before", "bmw-after", "BMW X6 color change")}</div></div></section>
 <section class="dark"><div class="wrap split why"><div><p class="eyebrow">Why The Rebels Garage</p><h2>Built for Vegas drivers.<br>Every kind of vehicle.</h2>
@@ -403,7 +403,7 @@ def pages(posts):
                     'Before and after photos of collision repair, custom paint and body work from The Rebels Garage in Las Vegas.',
                     phero('Our Work', 'Before &amp; after', 'Our work.', 'Real vehicles from our Las Vegas shop. Drag the slider to compare before and after.', 'gallery', ctas=False)
                     + f'''<section><div class="wrap"><div class="gal">
-<figure class="gal-item gal-wide">{ba("bmw-before", "bmw-after", "BMW X6 color change")}<figcaption><b>BMW X6 complete color change</b><span>Custom paint &middot; Factory white to custom teal metallic</span></figcaption></figure>
+<figure class="gal-item gal-wide">{ba("bmw-before", "bmw-after", "BMW X6 color change")}<figcaption><b>BMW X6 complete color change</b><span>Custom paint &middot; Factory white to custom green metallic</span></figcaption></figure>
 </div><div class="gal-grid">''' + ''.join(f'<figure><img src="{variant(m, 640, 800)}" alt="{esc(t)}: {esc(c)} at The Rebels Garage in Las Vegas" loading="lazy" width="640" height="800"><figcaption><b>{esc(t)}</b><span>{esc(c)}</span></figcaption></figure>' for m, t, c in GALLERY) + '''</div></div></section>''' + cta_band())
 
     P['about'] = ('About The Rebels Garage | Las Vegas Auto Body Shop',
