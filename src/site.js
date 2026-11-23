@@ -62,9 +62,9 @@
       if(j.rating&&j.count){var sm=document.createElement('div');sm.className='g-summary';
         sm.innerHTML='<b class="g-score">'+j.rating.toFixed(1)+'</b><div>'+STARS(j.rating,'')+'<span>'+j.rating.toFixed(1)+' out of 5 from '+j.count+' Google reviews</span></div>';
         wrap.insertBefore(sm,gr);}
-      var btns=document.createElement('div');btns.className='g-btns';
-      btns.innerHTML=(j.url?'<a class="btn '+'btn-red'+'" href="'+esc(j.url)+'" target="_blank" rel="noopener">Read all our reviews on Google</a>':'')+
-        (j.writeUrl?'<a class="btn '+'btn-line'+'" href="'+esc(j.writeUrl)+'" target="_blank" rel="noopener">Leave us a review</a>':'');
+      var btns=document.createElement('div');btns.className='g-btns ctas';
+      btns.innerHTML=(j.url?'<a class="btn '+'btn-red'+'" href="'+esc(j.url)+'" target="_blank" rel="noopener">Read reviews</a>':'')+
+        (j.writeUrl?'<a class="btn '+'btn-ghost'+'" href="'+esc(j.writeUrl)+'" target="_blank" rel="noopener">Leave us a review</a>':'');
       gr.parentNode.insertBefore(btns,gr.nextSibling);
     }).catch(function(){});
   });

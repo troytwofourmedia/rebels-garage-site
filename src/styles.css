@@ -240,3 +240,4 @@ nav.main a[aria-current]{color:#fff;border-color:var(--red)}nav.main>a:hover,.dd
   .hero-in{margin-top:-6vw}
   .ctas{flex-direction:column}.ctas .btn,.faq-cta,section .wrap>div>.btn{width:100%;padding:17px}
 }
+.g-btns .btn{min-width:220px}
