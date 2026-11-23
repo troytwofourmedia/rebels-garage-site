@@ -192,7 +192,7 @@ def foot():
 <div><h4>Services</h4><ul>{svc}</ul></div>
 <div><h4>Shop</h4><ul><li><a href="/gallery">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/blog">Blog</a></li><li><a href="/contact">Contact</a></li></ul></div>
 <div><h4>Visit</h4><ul class="contact-list"><li>{ic("pin")}<a href="{MAPS}" rel="noopener">{STREET}, {UNIT}<br>{CITY}</a></li><li>{ic("phone")}<a href="tel:{PHONE_T}">{PHONE}</a></li><li>{ic("mail")}<a href="mailto:{EMAIL}">{EMAIL}</a></li></ul>{hours_list()}</div>
-</div><div class="wrap legal"><span>&copy; 2026 {NAME}. Las Vegas, Nevada.</span><span>Site by <a href="https://www.twofourmedia.com" rel="noopener">Two Four Media</a></span></div></footer>
+</div><div class="wrap legal"><span>&copy; 2026 {NAME}. Las Vegas, Nevada.</span><span>Website by <a href="https://twofourstudio.com" rel="noopener">Two Four Studio</a>, a <a href="https://www.twofourmedia.com" rel="noopener">Two Four Media</a> company</span></div></footer>
 <div class="mbar"><a href="tel:{PHONE_T}">{ic("phone")}Call</a><a class="mbar-red" href="/contact#quote">Free Estimate</a></div>
 <script src="/site.js"></script></body></html>'''
 
