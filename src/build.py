@@ -238,7 +238,7 @@ def insurance_band():
     return (f'''<section class="ins-band"><div class="ins-bg" style="background-image:url({variant('storefront-door', 1920, 900)})"></div><div class="wrap ins-in">
 <p class="eyebrow">Insurance claims</p><h2>We work with all insurance companies.</h2>
 <p class="lede">Whoever your coverage is with, bring it to us. We handle the back and forth with your adjuster so you are not stuck in the middle, and we keep you updated until your vehicle is ready.</p>
-<div class="ins-points"><div><b>Any insurer</b><span>All carriers welcome</span></div><div><b>Your choice</b><span>Your car, your shop</span></div><div><b>Free estimates</b><span>With or without a claim</span></div></div>
+<div class="ins-points"><div><b>Any insurer</b><span>All carriers welcome</span></div><div><b>Your choice</b><span>Your car, your shop</span></div><div><b>Free estimates</b><span>With or without a claim</span></div><div><b>Free towing</b><span>With your repair</span></div><div><b>NV licensed</b><span>State licensed shop</span></div></div>
 </div></section>''')
 
 
@@ -274,6 +274,7 @@ def steps():
 FAQ = [
     ('Do I have to use the shop my insurance company recommends?', 'No. Nevada law lets you take your vehicle to any licensed body shop you choose, and your insurer cannot require you to use a particular shop. Just tell them you want the repair done at The Rebels Garage.'),
     ('Do you work with my insurance company?', 'Yes. We work with all insurance companies and deal with your adjuster directly.'),
+    ('Do you offer towing?', 'Yes. Towing is free when we do the repair. Call the shop at (702) 935-4200 and we will set it up.'),
     ('Are estimates free?', 'Yes. Call the shop, stop by, or send your details through the estimate form and we will set up a free estimate.'),
     ('What kinds of vehicles do you repair?', 'Cars, trucks and SUVs, plus UTVs, Can-Ams, RZRs and other side-by-sides, RVs, motorhomes, travel trailers and commercial box trucks.'),
     ('Can you match my factory paint?', 'Yes. We match factory colors for panel and spot repairs, and we also do complete color changes and custom finishes.'),

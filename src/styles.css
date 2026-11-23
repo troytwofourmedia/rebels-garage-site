@@ -243,3 +243,4 @@ nav.main a[aria-current]{color:#fff;border-color:var(--red)}nav.main>a:hover,.dd
 .g-btns .btn{min-width:220px}
 
 @media (min-width:701px){.hero-bg img{filter:saturate(1.1) blur(2.5px);transform:scale(1.02);opacity:.34}}
+@media(min-width:861px){.ins-points{display:grid;grid-template-columns:repeat(5,1fr);max-width:1100px;margin-inline:auto}.ins-points div{min-width:0}}
