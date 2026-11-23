@@ -34,7 +34,7 @@ PHOTO = {
     'band': 'shop-floor', 'services': 'shop-floor', 'gallery': 'corvette-rear', 'contact': 'storefront-wide', 'blog': 'painter-mixing',
     'notfound': 'corvette-black-shop', 'gallery_top': 'c8-shop-front',
 }
-FOCUS.update({'utv-honda-talon': (0.5, 0.6), 'trans-am-frame-rack': (0.5, 0.55), 'storefront-door': (0.5, 0.35), 'corvette-black-shop': (0.5, 0.6), 'lexus-front-damage': (0.6, 0.45), 'team-duo': (0.5, 0.3), 'owner-storefront': (0.5, 0.35), 'tech-panel-fit': (0.6, 0.3), 'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
+FOCUS.update({'utv-honda-talon': (0.5, 0.6), 'trans-am-frame-rack': (0.5, 0.55), 'storefront-door': (0.5, 0.35), 'corvette-black-shop': (0.5, 0.6), 'lexus-front-damage': (0.72, 0.5), 'team-duo': (0.5, 0.3), 'owner-storefront': (0.5, 0.35), 'tech-panel-fit': (0.6, 0.3), 'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
               'lifted-truck-rear': (0.5, 0.6), 'silverado-on-lift': (0.5, 0.4), 'team-inspection': (0.5, 0.4),
               'painter-mixing': (0.5, 0.35), 'storefront-wide': (0.5, 0.45), 'owner-storefront': (0.5, 0.55), 'front-counter': (0.5, 0.5)})
 
@@ -218,12 +218,20 @@ def cta_band(title='Wrecked, dented or ready for a new look?', lede='Send us a f
 
 
 def choice_sec():
-    return (f'''<section class="choice"><div class="wrap split choice-in"><div class="choice-photo"><img class="rounded" src="{variant('owner-storefront', 900, 1050)}" alt="Outside The Rebels Garage on S Decatur Blvd in Las Vegas" loading="lazy" width="900" height="1050"></div>
+    return (f'''<section class="choice"><div class="wrap split choice-in"><div class="choice-photo"><img class="rounded" src="{variant('lexus-front-damage', 900, 1050)}" alt="A Lexus SUV with front end collision damage in the shop at The Rebels Garage" loading="lazy" width="900" height="1050"></div>
 <div><p class="eyebrow">Your car, your choice</p><h2>Do I have to use my insurance company's shop?</h2>
 <p class="lede">No. In Nevada, you can have your vehicle repaired at any licensed body shop you choose. Your insurance company can suggest one of its preferred shops, but state law says it cannot require you to use one, and it has to tell you about that right when you first report the claim.</p>
 {ticks(["Tell your insurance company you want your repair done at The Rebels Garage", "We inspect the damage and write up the repair estimate", "We work with your adjuster directly, from photos to paperwork", "If hidden damage shows up once the car is apart, we document it and send it to your insurer"])}
 <p class="fine">Nevada Revised Statutes 690B.016. Your insurer still pays based on the reasonable cost of the repair under your policy.</p>
 <div class="ctas"><a class="btn btn-red" href="/contact#quote">Start my estimate</a><a class="btn btn-ghost" href="tel:{PHONE_T}">{ic("phone")}{PHONE}</a></div></div></div></section>''')
+
+
+def family_sec():
+    return (f'''<section class="family"><div class="wrap split family-in"><div><p class="eyebrow">Family owned</p><h2>Family owned and operated by Daniel Hernandez.</h2>
+<p class="lede">When you bring your vehicle to The Rebels Garage, you deal directly with the people doing the work. Daniel and his crew treat every customer like family and every repair like it is their own car.</p>
+<blockquote class="fam-quote">&ldquo;The staff made me feel like family the moment I walked in.&rdquo;<cite>Gerardo R., Google review</cite></blockquote>
+<div class="ctas"><a class="btn btn-red" href="/contact#quote">Get a Free Estimate</a><a class="btn btn-ghost" href="/about">About the shop</a></div></div>
+<div class="family-photo"><img class="rounded" src="{variant('owner-storefront', 900, 1050)}" alt="Daniel Hernandez, owner of The Rebels Garage, outside the shop on S Decatur Blvd" loading="lazy" width="900" height="1050"></div></div></section>''')
 
 
 def insurance_band():
@@ -281,7 +289,7 @@ def faq(cls=''):
         {'@type': 'Question', 'name': html.unescape(q), 'acceptedAnswer': {'@type': 'Answer', 'text': html.unescape(a)}} for q, a in FAQ]}
     return (f'<section id="faq" class="{cls}"><div class="wrap faq-grid"><div><p class="eyebrow">FAQ</p><h2>Good questions.</h2>'
             f'<p class="lede">The short answers. Anything else, call the shop.</p></div>'
-            f'<div><div class="faq">{items}</div><a class="btn btn-line faq-cta" href="tel:{PHONE_T}">{ic("phone")}Ask a question</a></div></div></section>'
+            f'<div><div class="faq">{items}</div><a class="btn btn-ghost faq-cta" href="tel:{PHONE_T}">{ic("phone")}Ask a question</a></div></div></section>'
             f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>')
 
 
@@ -350,7 +358,7 @@ def post_page(p, posts):
     body = (f'<article class="post"><section class="post-head"><div class="wrap narrow"><p class="crumbs"><a href="/">Home</a><span>/</span><a href="/blog">Blog</a></p>'
             f'<h1>{esc(p["title"])}</h1><p class="meta">{nice(p["date"])} &middot; {p["minutes"]} min read</p></div></section>'
             f'<section class="tight"><div class="wrap narrow"><img class="post-img" src="{img}" alt="" width="1600" height="900"><div class="prose">{p["body"]}</div>'
-            f'<div class="post-cta"><div><h3>Need body work or paint?</h3><p>Get a free estimate from The Rebels Garage.</p></div><div class="ctas"><a class="btn btn-red" href="/contact#quote">Free Estimate</a><a class="btn btn-line" href="tel:{PHONE_T}">{PHONE}</a></div></div></div></section></article>'
+            f'<div class="post-cta"><div><h3>Need body work or paint?</h3><p>Get a free estimate from The Rebels Garage.</p></div><div class="ctas"><a class="btn btn-red" href="/contact#quote">Free Estimate</a><a class="btn btn-ghost" href="tel:{PHONE_T}">{PHONE}</a></div></div></div></section></article>'
             + more)
     extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
     return head(p['seo_title'], p['description'], f'blog/{p["slug"]}', img, 'article', extra) + top('blog/' + p['slug']) + body + foot()
@@ -392,7 +400,7 @@ def pages(posts):
 {marquee()}
 <section><div class="wrap">{sec_head("What we fix", "Six ways we bring vehicles back.", "Comprehensive body work and repairs for a wide range of vehicles, all under one roof on Decatur.", '<a class="link" href="/services">All services ' + ic("arrow") + '</a>')}{svc_cards()}</div></section>
 <section class="alt"><div class="wrap split ba-split"><div><p class="eyebrow">Custom paint</p><h2>Factory white to custom green.</h2>
-<p class="lede">A complete color change on a BMW X6, with precise prep and a flawless metallic finish. Drag to compare.</p><a class="btn btn-line" href="/gallery">See more of our work</a></div>
+<p class="lede">A complete color change on a BMW X6, with precise prep and a flawless metallic finish. Drag to compare.</p><a class="btn btn-ghost" href="/gallery">See more of our work</a></div>
 <div>{ba("bmw-before", "bmw-after", "BMW X6 color change")}</div></div></section>
 <section class="dark"><div class="wrap split why"><div><p class="eyebrow">Why The Rebels Garage</p><h2>Built for Vegas drivers.<br>Every kind of vehicle.</h2>
 <p class="lede">Cars to RVs, UTVs to box trucks. We repair them all with the same attention to detail.</p></div>
@@ -404,6 +412,7 @@ def pages(posts):
 {choice_sec()}
 {insurance_band()}
 <section><div class="wrap">{sec_head("How it works", "From first call to keys in hand.")}{steps()}</div></section>
+{family_sec()}
 {reviews()}
 {blog_sec}
 {faq('alt')}
