@@ -1,0 +1,14 @@
+{
+  "buildCommand": "python3 src/build.py",
+  "outputDirectory": "dist",
+  "installCommand": "",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {"source": "/home", "destination": "/", "permanent": true},
+    {"source": "/collision", "destination": "/collision-repair", "permanent": true},
+    {"source": "/paint", "destination": "/custom-paint", "permanent": true},
+    {"source": "/quote", "destination": "/contact#quote", "permanent": false}
+  ]
+}
