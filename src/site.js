@@ -49,7 +49,7 @@
       if(s<60)return 'a month ago';if(s<365)return Math.floor(s/30)+' months ago';var y=Math.floor(s/365);return y===1?'a year ago':y+' years ago'};
     fetch('https://www.twofourmedia.com/api/reviews?site='+site).then(function(r){return r.json()}).then(function(j){
       if(!j.ok||!j.reviews||j.reviews.length<3)return;
-      var pick=j.reviews.filter(function(v){return v.text.length>=100}).concat(j.reviews.filter(function(v){return v.text.length<100})).slice(0,6);
+      var pick=j.reviews.filter(function(v){return v.text.length>=100}).concat(j.reviews.filter(function(v){return v.text.length<100})).slice(0,+(gr.getAttribute('data-count')||6));
       gr.innerHTML=pick.map(function(v){
         var av=v.photo?'<img src="'+esc(v.photo)+'" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer">':'<span>'+esc(v.author.charAt(0))+'</span>';
         return '<figure class="review">'+STARS(v.rating,v.rating+' out of 5 stars')+

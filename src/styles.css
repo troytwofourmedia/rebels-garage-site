@@ -212,3 +212,4 @@ nav.main a[aria-current]{color:#fff;border-color:var(--red)}nav.main>a:hover,.dd
 .gal-grid figcaption{display:flex;flex-direction:column;padding:12px 2px 0}.gal-grid figcaption span{color:var(--mute);font-size:.9rem}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.trio img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
 @media(max-width:860px){.gal-grid{grid-template-columns:repeat(2,1fr);gap:12px}.gal-grid figcaption span{font-size:.8rem}.trio{grid-template-columns:1fr}}
+.r-who .r-av span{display:grid;place-items:center;font-size:1rem;color:#fff;text-transform:uppercase;line-height:1}

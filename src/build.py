@@ -19,7 +19,7 @@ SITE = 'https://www.therebelsgarage.com'
 NAME = 'The Rebels Garage'
 PHONE, PHONE_T = '(702) 935-4200', '+17029354200'
 EMAIL = 'info@rebelsauto.us'
-STREET, UNIT, CITY = '2695 S Decatur Blvd', 'Suite 400', 'Las Vegas, NV'
+STREET, UNIT, CITY = '2695 S Decatur Blvd', 'Suite 400', 'Las Vegas, NV 89102'
 MAPS = 'https://www.google.com/maps/search/?api=1&query=The+Rebels+Garage+2695+S+Decatur+Blvd+Suite+400+Las+Vegas+NV'
 HOURS = [('Monday to Friday', '8:00 am to 5:30 pm'), ('Saturday', '9:00 am to 1:00 pm'), ('Sunday', 'Closed')]
 esc = html.escape
@@ -269,12 +269,12 @@ def faq(cls=''):
 def reviews():
     # Fills from the live Google reviews feed when the shop's profile is connected; stays hidden until then.
     return ('<section class="reviews-sec" hidden><div class="wrap">' + sec_head('Reviews', 'What drivers say.')
-            + '<div class="grid3 reviews" data-greviews="rebels"></div></div></section>')
+            + '<div class="grid3 reviews" data-greviews="rebels" data-count="3"></div></div></section>')
 
 
 ORG = {'@context': 'https://schema.org', '@type': 'AutoBodyShop', '@id': SITE + '/#business', 'name': NAME, 'url': SITE, 'telephone': PHONE_T, 'email': EMAIL,
        'image': SITE + LOGO, 'logo': SITE + LOGO,
-       'address': {'@type': 'PostalAddress', 'streetAddress': f'{STREET} {UNIT}', 'addressLocality': 'Las Vegas', 'addressRegion': 'NV', 'addressCountry': 'US'},
+       'address': {'@type': 'PostalAddress', 'streetAddress': f'{STREET} {UNIT}', 'addressLocality': 'Las Vegas', 'addressRegion': 'NV', 'postalCode': '89102', 'addressCountry': 'US'},
        'openingHoursSpecification': [
            {'@type': 'OpeningHoursSpecification', 'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], 'opens': '08:00', 'closes': '17:30'},
            {'@type': 'OpeningHoursSpecification', 'dayOfWeek': 'Saturday', 'opens': '09:00', 'closes': '13:00'}],
