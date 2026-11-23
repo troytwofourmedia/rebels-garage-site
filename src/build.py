@@ -51,12 +51,12 @@ GALLERY = [
     ('hood-paint-stand', 'Hood refinish', 'Paint prep'),
     ('truck-front-teardown', 'Truck front end', 'Frame and front end repair'),
     ('car-on-lift', 'Underbody work', 'Suspension and frame check'),
-    ('silverado-on-lift', 'Silverado', 'Truck body repair'),
-    ('lifted-truck-rear', 'Lifted truck', 'Rear end repair'),
+    ('silverado-on-lift', 'Chevy Tahoe', 'Front end collision repair'),
+    ('lifted-truck-rear', 'GMC Denali', 'Collision repair'),
     ('motorcycle-fairing-repair', 'Motorcycle fairing', 'Fairing repair and paint'),
     ('harley-custom', 'Harley custom', 'Custom finish'),
-    ('bmw-m3-green', 'BMW M3', 'Front end rebuild'),
-    ('honda-fit-finished', 'Honda Fit', 'Finished and ready for pickup'),
+    ('bmw-m3-green', 'BMW M3', 'Collision repair and color change'),
+    ('honda-fit-finished', 'Honda Fit', 'Repair in progress'),
     ('painter-mixing', 'Color matching', 'Mixing paint in house'),
 ]
 FOCUS['bmw-after'] = (0.45, 0.6)
