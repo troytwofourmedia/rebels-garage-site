@@ -29,12 +29,12 @@ LOGO, LOGO_SM = '/media/logo.webp', '/media/logo-sm.webp'
 # When the shop photos from Drive are added, change these names.
 PHOTO = {
     'hero': 'corvette-black-shop',
-    'collision': 'lexus-front-damage', 'dent': 'panel-sanding', 'paint': 'liftgate-paint-stand', 'frame': 'car-on-lift',
-    'offroad': 'lifted-truck-rear', 'rv': 'silverado-on-lift', 'about': 'storefront-wide', 'about_side': 'team-duo',
+    'collision': 'lexus-front-damage', 'dent': 'panel-sanding', 'paint': 'liftgate-paint-stand', 'frame': 'trans-am-frame-rack',
+    'offroad': 'utv-honda-talon', 'rv': 'silverado-on-lift', 'about': 'storefront-wide', 'about_side': 'team-duo',
     'band': 'shop-floor', 'services': 'shop-floor', 'gallery': 'corvette-rear', 'contact': 'storefront-wide', 'blog': 'painter-mixing',
     'notfound': 'corvette-black-shop', 'gallery_top': 'c8-shop-front',
 }
-FOCUS.update({'storefront-door': (0.5, 0.35), 'corvette-black-shop': (0.5, 0.6), 'lexus-front-damage': (0.6, 0.45), 'team-duo': (0.5, 0.3), 'owner-storefront': (0.5, 0.35), 'tech-panel-fit': (0.6, 0.3), 'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
+FOCUS.update({'utv-honda-talon': (0.5, 0.6), 'trans-am-frame-rack': (0.5, 0.55), 'storefront-door': (0.5, 0.35), 'corvette-black-shop': (0.5, 0.6), 'lexus-front-damage': (0.6, 0.45), 'team-duo': (0.5, 0.3), 'owner-storefront': (0.5, 0.35), 'tech-panel-fit': (0.6, 0.3), 'red-suv-front-damage': (0.5, 0.55), 'panel-sanding': (0.5, 0.45), 'car-on-lift': (0.5, 0.35),
               'lifted-truck-rear': (0.5, 0.6), 'silverado-on-lift': (0.5, 0.4), 'team-inspection': (0.5, 0.4),
               'painter-mixing': (0.5, 0.35), 'storefront-wide': (0.5, 0.45), 'owner-storefront': (0.5, 0.55), 'front-counter': (0.5, 0.5)})
 
